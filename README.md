@@ -1,1 +1,3 @@
+[![Build Status](https://travis-ci.org/invergent/sf-be.svg?branch=develop)](https://travis-ci.org/invergent/sf-be) [![Maintainability](https://api.codeclimate.com/v1/badges/6bb3de30cc5ffcd06a85/maintainability)](https://codeclimate.com/github/invergent/sf-be/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/6bb3de30cc5ffcd06a85/test_coverage)](https://codeclimate.com/github/invergent/sf-be/test_coverage)
+
 Smartfix API
