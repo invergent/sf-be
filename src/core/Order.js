@@ -9,7 +9,7 @@ export default class Order {
     const { items, phone } = customerOrder;
 
     try {
-      const [customer] = await UserService.findOrCreate(phone);
+      const [customer] = await UserService.createCustomer(phone);
       const order = await OrderService.createOrder(customer.id);
       const itemsOfOrder = Order.transformOrderItems(items, order.id);
       const orderItems = await OrderService.createOrderItems(itemsOfOrder);

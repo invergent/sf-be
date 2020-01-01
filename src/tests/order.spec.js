@@ -1,8 +1,8 @@
 import supertest from 'supertest';
 import http from 'http';
-import app from '../../app';
-import services from '../../services';
-import commonAssertions from '../utils/commonAssertions';
+import app from '../app';
+import services from '../services';
+import commonAssertions from './utils/commonAssertions';
 
 const { OrderService } = services;
 const { badRequest } = commonAssertions;
@@ -22,7 +22,7 @@ describe('Order tests', () => {
   });
   
   describe('orders', () => {
-    it('should report project is live', async () => {
+    it('should fail if request is empty', async () => {
       const response = await request
         .post('/order')
         .send({});

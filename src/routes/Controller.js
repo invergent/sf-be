@@ -2,7 +2,7 @@ import core from '../core';
 // import notify from '../events';
 import utility from '../utility';
 
-const { Order } = core;
+const { Order, UserManagement } = core;
 const { Respond } = utility;
 
 export default class Controller {
@@ -11,5 +11,9 @@ export default class Controller {
     // if (status === responseTypes.success)
     // notify.emit(actionTypes.emailVerification, [data.user]);
     return Respond.send(res, status, data);
+  }
+
+  static async createRolesAndSuperAdmins() {
+    return UserManagement.createRolesAndSuperAdmin();
   }
 }
