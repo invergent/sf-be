@@ -18,4 +18,8 @@ export default class UserService {
       defaults: user
     });
   }
+
+  static fetchAdmins() {
+    return User.findAll({ where: { roleId: 1 }, raw: true });
+  }
 }
