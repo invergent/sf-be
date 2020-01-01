@@ -1,0 +1,29 @@
+{
+  "development": {
+    "host": "localhost",
+    "port": 5433,
+    "database": "smartfix",
+    "username": "postgres",
+    "password": "pass",
+    "dialect": "postgres",
+    "logging": false
+  },
+  "test": {
+    "host": "localhost",
+    "port": 5432,
+    "database": "smartfix_test",
+    "username": "postgres",
+    "password": null,
+    "dialect": "postgres",
+    "logging": false
+  },
+  "production": {
+    "host": "/cloudsql/smartfix:us-central1:smartfix",
+    "port": 5432,
+    "database": "smartfix",
+    "username": "postgres",
+    "password": "pass",
+    "dialect": "postgres",
+    "logging": false
+  }
+}
