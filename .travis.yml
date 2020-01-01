@@ -1,5 +1,8 @@
 services:
   - postgresql
+addons:
+  hosts:
+    - example.com
 env:
   global:
     - CC_TEST_REPORTER_ID=c205abf930941058ec94d6567bafd5789d25ae1cb348e6e50e057785d717782e
@@ -8,7 +11,7 @@ node_js:
   - '11.10.1'
 before_script:
   - npm install sequelize-cli -g
-  - psql -c 'create database overtime;' -U postgres
+  - psql -c 'create database smartfix_test;' -U postgres
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
