@@ -1,3 +1,4 @@
 import Order from './Order';
+import UserManagement from './UserManagement';
 
-export default { Order };
+export default { Order, UserManagement };
