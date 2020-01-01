@@ -16,8 +16,7 @@ const requestTypes = Object.freeze({
 });
 
 const actionTypes = Object.freeze({
-  emailVerification: 'emailVerification',
-  welcome: 'welcome'
+  newOrder: 'newOrder'
 });
 
 const sourceTypes = Object.freeze({

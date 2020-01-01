@@ -13,7 +13,7 @@ export default class Order {
       const order = await OrderService.createOrder(customer.id);
       const itemsOfOrder = Order.transformOrderItems(items, order.id);
       const orderItems = await OrderService.createOrderItems(itemsOfOrder);
-      return [responseTypes.success, { customer, orderItems }];
+      return [responseTypes.success, { customer, order, orderItems }];
     } catch (error) {
       return ErrorHandler.handle(error);
     }

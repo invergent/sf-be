@@ -6,7 +6,7 @@
     "username": "postgres",
     "password": "pass",
     "dialect": "postgres",
-    "logging": false
+    "logging": true
   },
   "test": {
     "host": "localhost",
