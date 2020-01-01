@@ -1,25 +1,16 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('CustomerRequests', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('Order', {
     id: {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
       type: Sequelize.INTEGER
     },
-    serviceId: {
-      type: Sequelize.INTEGER,
-      onDelete: 'CASCADE',
-      references: {
-        model: 'Services',
-        key: 'id',
-        as: 'service'
-      }
-    },
     customerId: {
       type: Sequelize.INTEGER,
-      onDelete: 'CASCADE',
+      onDelete: 'SET NULL',
       references: {
-        model: 'Users',
+        model: 'User',
         key: 'id',
         as: 'customer'
       }
@@ -33,5 +24,5 @@ module.exports = {
       type: Sequelize.DATE
     }
   }, { freezeTableName: true }),
-  down: queryInterface => queryInterface.dropTable('CustomerRequests')
+  down: queryInterface => queryInterface.dropTable('Order')
 };

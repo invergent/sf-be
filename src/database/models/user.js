@@ -1,5 +1,5 @@
-const users = (sequelize, DataTypes) => {
-  const Users = sequelize.define('Users', {
+const user = (sequelize, DataTypes) => {
+  const User = sequelize.define('User', {
     firstname: {
       type: DataTypes.STRING
     },
@@ -22,14 +22,14 @@ const users = (sequelize, DataTypes) => {
     roleId: {
       type: DataTypes.INTEGER
     }
-  });
+  }, { freezeTableName: true });
 
-  Users.associate = (models) => {
-    Users.hasMany(models.CustomerRequests, { as: 'orders', foreignKey: 'UsersId' });
-    Users.belongsTo(models.Roles, { as: 'role', foreignKey: 'roleId' });
+  User.associate = (models) => {
+    User.hasMany(models.Order, { as: 'orders', foreignKey: 'customerId' });
+    User.belongsTo(models.Role, { as: 'role', foreignKey: 'roleId' });
   };
 
-  return Users;
+  return User;
 };
 
-export default users;
+export default user;

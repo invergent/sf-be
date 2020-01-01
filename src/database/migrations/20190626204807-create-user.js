@@ -1,5 +1,5 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('Users', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('User', {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -7,16 +7,13 @@ module.exports = {
       type: Sequelize.INTEGER
     },
     firstname: {
-      type: Sequelize.STRING,
-      allowNull: false
+      type: Sequelize.STRING
     },
     lastname: {
-      type: Sequelize.STRING,
-      allowNull: false
+      type: Sequelize.STRING
     },
     emailAddress: {
       type: Sequelize.STRING,
-      allowNull: false,
       unique: true
     },
     password: {
@@ -32,7 +29,7 @@ module.exports = {
       type: Sequelize.INTEGER,
       onDelete: 'SET NULL',
       references: {
-        model: 'Roles',
+        model: 'Role',
         key: 'id',
         as: 'role'
       }
@@ -46,5 +43,5 @@ module.exports = {
       type: Sequelize.DATE
     }
   }, { freezeTableName: true }),
-  down: queryInterface => queryInterface.dropTable('Users')
+  down: queryInterface => queryInterface.dropTable('User')
 };

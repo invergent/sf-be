@@ -1,7 +1,7 @@
 {
   "development": {
     "host": "localhost",
-    "port": 5433,
+    "port": 5432,
     "database": "smartfix",
     "username": "postgres",
     "password": "pass",
